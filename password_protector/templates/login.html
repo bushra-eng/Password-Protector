@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1> Login Page </h1>
+<form action="login" method='post'>
+
+	{% csrf_token %}
+	Enter Username : <input type="text" name="username"><br>
+	Enter Password : <input type="text" name="password"><br>
+
+    <input type="submit" value="Log in" name="login_account" />
+	Don't have an account? <a href="{% url 'register' %}" class="ml-2">Sign Up</a><br>
+	{% for message in messages %}
+
+                    <div class="alert alert-success">
+                        <a class="close" href="#" data-dismiss="alert">×</a>
+
+                        {{ message }}
+
+                    </div>
+            {% endfor %}
+</form>
+{% endblock %}

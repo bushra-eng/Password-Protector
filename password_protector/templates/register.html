@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1> Registeration Page </h1>
+<form action="register" method='post'>
+	{% csrf_token %}
+
+	Enter Username : <input type="text" name="username"><br>
+	Enter Email Address : <input type="text" name="email_address"><br>
+	Enter Password : <input type="text" name="password"><br>
+
+    <input type="submit" value="Register Account" name="reg_account" />
+	Already have an account? <a href="{% url 'login' %}" class="ml-2">Sign In</a><br>
+</form>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="adding_password" method='post'>
+    {% csrf_token %}
+
+    <input type="submit" value="Add Passwords" />
+</form>
+<form action="viewing_password" method="post">
+    {% csrf_token %}
+
+    <input type="submit" value="View Passwords" />
+</form>
+
+{% endblock %}
